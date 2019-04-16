@@ -6,19 +6,18 @@ import lombok.Data;
  * @author ytp
  */
 @Data
-public class SongDO{
+public class SongListSimpleDO {
 
     private String id;
 
     private String name;
 
-    private String singer;
+    private String creator;
 
-    private String url;
+    private String createTime;
 
     private String pic;
 
-    private String lrc;
+    private String playCount;
 
-    private Long time;
 }
