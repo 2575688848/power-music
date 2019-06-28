@@ -101,4 +101,19 @@ public interface IMusicService {
      * @return
      */
     Result<String> getCommentsOfSong(Long id);
+
+    /**
+     * 获取歌曲列表
+     *
+     * @param id 歌单id
+     * @return 歌曲列表
+     */
+    Result<com.ytp.music.entity.netease.NetEaseSongListDO> getSongs(String id);
+
+    /**
+     * 获取专辑歌曲
+     * @param id
+     * @return
+     */
+    Result<SongListDO> getAlbumSongList(String id);
 }

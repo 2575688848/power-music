@@ -29,7 +29,7 @@ public class QQMusicController {
         return musicServiceImpl.getSongList(id);
     }
 
-    @ApiOperation("搜索音乐/MV")
+    @ApiOperation("搜索音乐/MV/album")
     @GetMapping("/search")
     public Result getResult(@RequestParam("s") String s, @RequestParam("type") String type,
                                                @RequestParam("limit") Integer limit, @RequestParam("offset") Integer offset) {
@@ -70,6 +70,13 @@ public class QQMusicController {
     public Result getHotMusicVideoList(@RequestParam("limit") Integer limit, @RequestParam("offset") Integer offset) {
         log.info("获取热门mv列表");
         return musicServiceImpl.getHotMusicVideoList(limit, offset);
+    }
+
+    @ApiOperation("获取专辑歌单列表")
+    @GetMapping("/albumSongList/{id}")
+    public Result<SongListDO> getAlbumSongList(@PathVariable("id") String id) {
+        log.info("获取歌单列表 id :{}", id);
+        return musicServiceImpl.getAlbumSongList(id);
     }
 
 }

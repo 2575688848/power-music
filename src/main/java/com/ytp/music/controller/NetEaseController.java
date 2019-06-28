@@ -1,6 +1,7 @@
 package com.ytp.music.controller;
 
 import com.ytp.music.base.Result;
+import com.ytp.music.entity.netease.NetEaseSongListDO;
 import com.ytp.music.service.impl.MusicServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -8,6 +9,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * @author ytp
@@ -36,5 +39,13 @@ public class NetEaseController {
         return musicServiceImpl.getNetEaseSongList(uid);
     }
 
+
+    @ApiOperation("获取歌曲列表")
+    @GetMapping("/songs/{id}")
+    public Result<NetEaseSongListDO> getSongList(@PathVariable("id") String id, HttpServletResponse response, HttpServletRequest request) {
+        log.info("token:" + request.getHeader("token"));
+        log.info("获取歌单列表 id :{}", id);
+        return musicServiceImpl.getSongs(id);
+    }
 
 }

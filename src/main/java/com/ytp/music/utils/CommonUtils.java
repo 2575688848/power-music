@@ -23,7 +23,7 @@ import java.util.Set;
 public class CommonUtils {
 
     private static final int CONNECT_TIMEOUT = 10000;
-    private static final int SOCKET_TIMEOUT = 6000;
+    private static final int SOCKET_TIMEOUT = 10000;
     private static final String KEY = "579621905";
 
     /**

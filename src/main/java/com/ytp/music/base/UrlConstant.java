@@ -5,11 +5,13 @@ package com.ytp.music.base;
  */
 public class UrlConstant {
 
-    public static final String QQ_SONGLIST_URL = "https://api.itooi.cn/music/tencent/songList";
+    public static final String QQ_SONG_LIST_URL = "https://api.itooi.cn/music/tencent/songList";
 
     public static final String QQ_SEARCH_URL = "https://api.itooi.cn/music/tencent/search";
 
     public static final String QQ_DETAIL_SONG_URL = "https://api.itooi.cn/music/tencent/song";
+
+    public static final String QQ_MUSIC_URL = "https://v1.itooi.cn/tencent/url?quality=128&id=";
 
     /**
      * 获取音乐歌词
@@ -33,5 +35,9 @@ public class UrlConstant {
     public static final String NT_SEARCH_URL = "https://api.itooi.cn/music/netease/search";
 
     public static final String NT_USER_SONG_LIST_URL = "https://api.itooi.cn/music/netease/userSongList";
+
+    public static final String NT_SONG_LIST_URL = "https://api.itooi.cn/music/netease/songList";
+
+    public static final String QQ_ALBUM_SONG_LIST_URL = "https://api.itooi.cn/music/tencent/album";
 
 }

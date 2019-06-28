@@ -2,3 +2,21 @@ server:
     port: 8080
     servlet:
         context-path: /music
+
+mybatis:
+    config-location: classpath:mybatis/mybatis-config.xml
+    mapper-locations: classpath:mybatis/mapper/*.xml
+
+spring:
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://47.110.51.213:3306/music?useUnicode=true&amp;useSSL=false&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;zeroDateTimeBehavior=convertToNull&amp;allowMultiQueries=true
+        username: root
+        password: 123456
+        initialSize: 5
+        minIdle: 5
+        maxActive: 20
+        maxWait: 60000
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000

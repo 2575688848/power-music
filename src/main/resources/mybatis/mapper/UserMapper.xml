@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ytp.music.dao.UserDao">
+
+    <resultMap id="UserMap" type="com.ytp.music.entity.local.UserDO">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="username" column="user_name" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="nickname" column="nick_name" jdbcType="VARCHAR"/>
+        <result property="sex" column="sex" jdbcType="VARCHAR"/>
+        <result property="tel" column="tel" jdbcType="VARCHAR"/>
+        <result property="email" column="email" jdbcType="VARCHAR"/>
+        <result property="birthday" column="birthday" jdbcType="VARCHAR"/>
+        <result property="address" column="address" jdbcType="VARCHAR"/>
+        <result property="url" column="url" jdbcType="VARCHAR"/>
+        <result property="easeId" column="ease_id" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <select id="getUser" resultMap="UserMap">
+        select * from user where user_name = #{username} and password = #{password} limit 1
+    </select>
+
+    <select id="getUserById" resultMap="UserMap">
+        select * from user where id = #{id}
+    </select>
+
+    <insert id="register" parameterType="com.ytp.music.entity.local.UserDO" useGeneratedKeys="true"
+            keyProperty="id">
+        insert into user (user_name, password, nick_name, url) values (#{username}, #{password}, #{nickname}, #{url})
+    </insert>
+
+   <update id="update" parameterType="com.ytp.music.entity.local.UserDO">
+       update user
+       <trim prefix="SET" suffixOverrides=",">
+           <if test="nickname != null">
+               nick_name = #{nickname},
+           </if>
+           <if test="sex != null">
+               sex = #{sex},
+           </if>
+
+           <if test="tel != null">
+               tel = #{tel},
+           </if>
+           <if test="email != null">
+               email = #{email},
+           </if>
+           <if test="birthday != null">
+               birthday = #{birthday},
+           </if>
+           <if test="address != null">
+               address = #{address},
+           </if>
+           <if test="url != null">
+               url = #{url},
+           </if>
+           <if test="easeId != null">
+               ease_id = #{easeId},
+           </if>
+       </trim>
+       where id = #{id}
+   </update>
+
+</mapper>

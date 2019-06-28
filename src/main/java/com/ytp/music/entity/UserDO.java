@@ -10,6 +10,8 @@ import lombok.Data;
 @Data
 public class UserDO {
 
+    private Integer id;
+
     private Integer province;
 
     private Integer city;
@@ -44,5 +46,9 @@ public class UserDO {
     private Integer playlistCount;
 
     private Integer playlistBeSubscribedCount;
+
+    private String address;
+
+    private String date;
 }
 

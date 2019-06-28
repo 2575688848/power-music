@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ytp.music.dao.SongFolderDao">
+
+    <resultMap id="FolderMap" type="com.ytp.music.entity.local.SongFolderDO">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="folderName" column="folder_name" jdbcType="VARCHAR"/>
+        <result property="songCount" column="song_count" jdbcType="INTEGER"/>
+        <result property="playCount" column="play_count" jdbcType="INTEGER"/>
+        <result property="userId" column="user_id" jdbcType="INTEGER"/>
+        <result property="gmtCreate" column="gmt_create" jdbcType="TIMESTAMP"/>
+        <result property="gmtModify" column="gmt_modify" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <select id="getAllFolder" resultMap="FolderMap">
+        select * from song_folder where user_id = #{userId} order by play_count desc
+    </select>
+
+    <select id="getByTime" resultMap="FolderMap">
+        select * from song_folder where gmt_modify > #{time} and user_id = #{id} order by play_count desc
+    </select>
+
+    <insert id="addFolder" parameterType="com.ytp.music.entity.local.SongFolderDO" useGeneratedKeys="true"
+            keyProperty="id">
+        insert into song_folder (folder_name, user_id) values (#{folderName}, #{userId})
+    </insert>
+
+    <delete id="deleteFolder">
+        delete from song_folder where id = #{id}
+    </delete>
+
+    <update id="updateFolder">
+        update song_folder
+        <if test="type == 0">
+            set folder_name = #{folderName} where id = #{id}
+        </if>
+
+        <if test="type == 1">
+            set song_count = song_count + 1 where id = #{id}
+        </if>
+        <if test="type == 2">
+            set play_count = play_count + 1 where id = #{id}
+        </if>
+        <if test="type == -1">
+            set song_count = song_count - 1 where id = #{id}
+        </if>
+        <if test="type == -2">
+            set play_count = play_count - 1 where id = #{id}
+        </if>
+    </update>
+</mapper>

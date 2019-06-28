@@ -18,6 +18,8 @@ public class MusicVideoDO{
 
     private Long play_count;
 
+    private String publish_date;
+
     private String singer_name;
 
     private Long singerid;
