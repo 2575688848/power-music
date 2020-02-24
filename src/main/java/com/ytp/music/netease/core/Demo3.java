@@ -15,7 +15,7 @@ public class Demo3 {
         try {
 
             //测试搜索功能，包括搜索歌曲，歌手，用户等
-            String music_name="Mi_Chong";
+            String music_name="告白气球";
             UrlParamPair upp = Api.SearchMusicList(music_name,"1002");
             String req_str = upp.getParas().toJSONString();
             System.out.println("req_str:"+req_str);

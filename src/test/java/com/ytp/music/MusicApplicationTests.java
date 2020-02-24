@@ -4,12 +4,15 @@ import com.ytp.music.dao.UserDao;
 import com.ytp.music.entity.local.UserDO;
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.apache.commons.lang3.time.DateUtils;
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import java.lang.invoke.MethodHandles;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.UUID;
@@ -43,6 +46,10 @@ public class MusicApplicationTests {
             e.printStackTrace();
         }
 
+    }
+
+    public static void main(String[] args) {
+        System.out.println(MethodHandles.lookup().lookupClass().getName());
     }
 
 }
