@@ -14,9 +14,9 @@ spring:
         url: jdbc:mysql://47.110.51.213:3306/music?useUnicode=true&amp;useSSL=false&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;zeroDateTimeBehavior=convertToNull&amp;allowMultiQueries=true
         username: root
         password: 123456
-        initialSize: 5
-        minIdle: 5
-        maxActive: 20
-        maxWait: 60000
-        timeBetweenEvictionRunsMillis: 60000
-        minEvictableIdleTimeMillis: 300000
+        initialSize: 5      #初始化连接
+        minIdle: 5          #最小空闲连接
+        maxActive: 20       #最大同时连接数量
+        maxWait: 60000      #超时等待时间 60秒
+        timeBetweenEvictionRunsMillis: 60000 #每60秒运行一次空闲连接回收
+        minEvictableIdleTimeMillis: 300000   #空闲时间超过5分钟的空闲连接被回收
