@@ -299,19 +299,32 @@ public class MusicServiceImpl implements IMusicService {
 
     @Override
     public Result<com.ytp.music.entity.netease.NetEaseSongListDO> getSongs(String id) {
-        Map<String, Object> params = new HashMap<>(2);
-        params.put("id", id);
-        String content = CommonUtils.getResponseString(params, UrlConstant.NT_SONG_LIST_URL);
-        ResponseDO<com.ytp.music.entity.netease.NetEaseSongListDO> responseDO = JSON.parseObject(content, new TypeReference<ResponseDO<com.ytp.music.entity.netease.NetEaseSongListDO>>() {
-        });
-        if (responseDO == null) {
-            log.error("获取音乐列表信息失败");
-            return Result.fail("获取音乐列表信息失败");
-        }
-        if (responseDO.getCode() != 200) {
-            return Result.fail(responseDO.getResult());
-        }
-        return Result.success(responseDO.getData());
+
+        com.ytp.music.entity.netease.NetEaseSongListDO netEaseSongListDO = new com.ytp.music.entity.netease.NetEaseSongListDO();
+        List<SongDO> songs = new ArrayList<>();
+        SongDO songDO = new SongDO();
+        songDO.setUrl("/Users/pinge/Desktop/Red.mp3");
+        songDO.setLrc("/Users/pinge/Desktop/red.lrc");
+        songDO.setPic("/Users/pinge/Desktop/WechatIMG6.png");
+        songDO.setName("Red");
+        songDO.setSinger("泰勒史薇芙特");
+        songs.add(songDO);
+        netEaseSongListDO.setSongs(songs);
+        return Result.success(netEaseSongListDO);
+
+//        Map<String, Object> params = new HashMap<>(2);
+//        params.put("id", id);
+//        String content = CommonUtils.getResponseString(params, UrlConstant.NT_SONG_LIST_URL);
+//        ResponseDO<com.ytp.music.entity.netease.NetEaseSongListDO> responseDO = JSON.parseObject(content, new TypeReference<ResponseDO<com.ytp.music.entity.netease.NetEaseSongListDO>>() {
+//        });
+//        if (responseDO == null) {
+//            log.error("获取音乐列表信息失败");
+//            return Result.fail("获取音乐列表信息失败");
+//        }
+//        if (responseDO.getCode() != 200) {
+//            return Result.fail(responseDO.getResult());
+//        }
+//        return Result.success(responseDO.getData());
     }
 
     @Override

@@ -11,7 +11,7 @@ spring:
     datasource:
         type: com.alibaba.druid.pool.DruidDataSource
         driverClassName: com.mysql.jdbc.Driver
-        url: jdbc:mysql://47.110.51.213:3306/music?useUnicode=true&amp;useSSL=false&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;zeroDateTimeBehavior=convertToNull&amp;allowMultiQueries=true
+        url: jdbc:mysql://66.42.102.240:3306/music?useUnicode=true&amp;useSSL=false&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;zeroDateTimeBehavior=convertToNull&amp;allowMultiQueries=true
         username: root
         password: 123456
         initialSize: 5      #初始化连接
