@@ -5,3 +5,4 @@ target/*
 .idea/workspace.xml
 *.log
 review/*
+.DS_Store
