@@ -6,3 +6,7 @@ target/*
 *.log
 review/*
 .DS_Store
+dependency-reduced-pom.xml
+flume-intercepter/target/*
+
+
