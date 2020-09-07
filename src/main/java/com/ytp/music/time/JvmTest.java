@@ -5,7 +5,7 @@ package com.ytp.music.time;
  */
 public class JvmTest {
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         System.out.println("。。。。程序开始。。。。");
         for (int i = 0; i < 1000000; i++) {
             alloc();
