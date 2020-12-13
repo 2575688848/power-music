@@ -146,6 +146,18 @@
 			<version>5.3.10</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.zeroturnaround</groupId>
+			<artifactId>zt-exec</artifactId>
+			<version>1.12</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jooby</groupId>
+			<artifactId>jooby</artifactId>
+			<version>1.6.8</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
