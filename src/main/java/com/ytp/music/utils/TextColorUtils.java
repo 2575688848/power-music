@@ -1,18 +1,7 @@
 package com.ytp.music.utils;
 
 import lombok.extern.slf4j.Slf4j;
-import org.apache.http.HttpEntity;
-import org.apache.http.client.config.RequestConfig;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.utils.URIBuilder;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Component;
-
-import java.util.Map;
-import java.util.Set;
 
 /**
  * @author ytp
@@ -35,5 +24,6 @@ public class TextColorUtils {
             }
             System.out.println("\u001b[0m");
         }
+        System.out.println("\u001b[7m./src/views/command/detail/ServiceCommandDetail.js\u001b[27m");
     }
 }
