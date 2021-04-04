@@ -1,4 +1,4 @@
-package com.lehe.higo.oxp.model;
+package com.ytp.music.time;
 
 import lombok.Data;
 

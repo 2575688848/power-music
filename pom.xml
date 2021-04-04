@@ -10,13 +10,12 @@
 	</parent>
 	<groupId>com.ytp</groupId>
 	<artifactId>music</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<version>1.0</version>
+	<packaging>war</packaging>
 	<name>music</name>
 	<description>music project for Spring Boot</description>
 
 	<properties>
-		<java.version>1.8</java.version>
 		<docker.image.prefix>music1.0</docker.image.prefix>
 	</properties>
 
@@ -24,6 +23,13 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+				</exclusion>
+			</exclusions>
+
 		</dependency>
 
 		<dependency>
@@ -156,6 +162,18 @@
 			<groupId>org.jooby</groupId>
 			<artifactId>jooby</artifactId>
 			<version>1.6.8</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.googlecode.xmemcached</groupId>
+			<artifactId>xmemcached</artifactId>
+			<version>1.4.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-core</artifactId>
+			<version>8.5.50</version>
 		</dependency>
 
 	</dependencies>

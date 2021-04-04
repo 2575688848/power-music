@@ -25,4 +25,14 @@ public class MusicVideoDO{
     private Long singerid;
 
     private String v_id;
+
+    private MusicVideoDO next;
+
+    public static void main(String[] args) {
+        MusicVideoDO musicVideoDO = new MusicVideoDO();
+        musicVideoDO.setDocid("123");
+        MusicVideoDO musicVideoDO1 = new MusicVideoDO();
+        musicVideoDO1.next = musicVideoDO;
+        System.out.println();
+    }
 }

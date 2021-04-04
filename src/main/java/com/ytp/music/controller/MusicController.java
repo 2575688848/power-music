@@ -26,6 +26,8 @@ public class MusicController {
     @Resource
     private ILocalMusicService localMusicService;
 
+    private int a = 1;
+
     @ApiOperation("添加歌单")
     @PostMapping("/add")
     public Result add(@RequestBody SongFolderDO songFolderDO) {
@@ -119,5 +121,10 @@ public class MusicController {
     public Result updateSongPlayCount(@RequestParam("id") Integer id) {
         log.info("更新歌曲播放次数 id :{}", id);
         return Result.success(localMusicService.updateSongPlayCount(id));
+    }
+
+    public static void main(String[] args) {
+        char[] a = {1,2};
+        System.out.println(Integer.MAX_VALUE);
     }
 }

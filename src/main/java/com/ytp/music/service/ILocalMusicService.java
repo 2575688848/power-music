@@ -1,5 +1,6 @@
 package com.ytp.music.service;
 
+import com.sun.corba.se.spi.ior.Identifiable;
 import com.ytp.music.entity.local.LocalMusicDO;
 import com.ytp.music.entity.local.MusicVideoDO;
 import com.ytp.music.entity.local.SongFolderDO;
@@ -12,6 +13,11 @@ import java.util.List;
  */
 public interface ILocalMusicService {
 
+    static void a() {
+        System.out.println("阿计算机技术");
+    }
+
+    int A = 0;
     /**
      * 添加歌单
      * @param songFolderDO

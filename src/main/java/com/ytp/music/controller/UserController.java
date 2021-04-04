@@ -66,6 +66,7 @@ public class UserController {
     @GetMapping("/analysis/{id}")
     public Result getAnalysis(@PathVariable("id") Integer id) {
         log.info("获得分析结果 用户id :{}",id);
-        return Result.success(userService.getAnalysis(id));
+//        return Result.success(userService.getAnalysis(id));
+        return Result.success("哈哈哈 分析结果");
     }
 }
